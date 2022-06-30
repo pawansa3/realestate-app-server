@@ -30,6 +30,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images', express.static(path.join(__dirname, 'public/uploads')));
 
 
+app.get("/api/test", (req, res) => {
+    res.send("API test success!")
+})
+
 // GET all property
 app.get("/api/property", (req, res) => {
     Property.find().exec((err, data) => {
